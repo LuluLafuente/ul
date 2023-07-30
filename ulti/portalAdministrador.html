@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+  <meta http-equiv="CONTENT-TYPE" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
+  <link rel="shortcut icon" href="https://iset-tuc.infd.edu.ar/aula/static/14.05.00-45/skins/redinfod/img/comunes/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="./css/styleAdmin.css" />
+   <script
+        src="https://kit.fontawesome.com/c0959f9251.js" 
+        crossorigin="anonymous">
+   </script>
+  <title>Portal Administrador | ISET Educativo</title>
+</head>
+<body>
+    <!--Panel lateral con opciones-->
+    <main>
+        <div class="container">
+            <div class="navigation">
+                <ul>
+                    <li>
+                        <a href="portalAdministrador.php">
+                            <span class="icon"><i class="fa-solid fa-user-tie"></i></span>
+                            <span class="title"><?php echo $_SESSION["u_nombre"] . ", " . $_SESSION["u_apellido"] ;?></span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="inscripcion_docente.php">
+                            <span class="icon"><i class="fa-solid fa-person-chalkboard"></i></span>
+                            <span class="title">Inscripción Docente</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="inscripcion_alumno.php">
+                            <span class="icon"><i class="fa-solid fa-file-circle-plus"></i></span>
+                            <span class="title">Inscripción Alumno</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span class="icon"><i class="fa-solid fa-chalkboard-user"></i></span>
+                            <span class="title">Inscripción Coordinador</span>
+                        </a>
+                    </li>
+                     <li>
+                        <a href="ver_notas_examen.php">
+                            <span class="icon"><i class="fa-regular fa-note-sticky"></i></span>
+                            <span class="title">Ver Notas Examenes</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="ver_notas_cursado.php">
+                            <span class="icon"><i class="fa-solid fa-receipt"></i></span>
+                            <span class="title"> Ver Notas Cursado</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="loginAdmin.html">
+                            <span class="icon"><i class="fa-solid fa-arrow-right-from-bracket"></i></span>
+                            <span class="title">Cerrar</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <!--Menu-->
+            <div class="main">
+                <div class="topbar">
+                    <div class="toggle"><i class="fa-solid fa-bars"></i></div>
+                </div>
+                <section id="panel-central">
+                    <div class="panel-titulo">
+                        <h1>Bienvenido/a <?php echo $_SESSION["u_nombre"] . ", " . $_SESSION["u_apellido"] ;?></h1>
+                    </div>
+                    <div class="tarjeta">
+                        <p>Elija una opcion del menu lateral para continuar</p>
+                    </div>
+                </section>
+            </div><!--Fin Menu-->
+                        
+    </main>
+
+    <script src="js/appAlumno.js"></script>  
+</body>
+</html>

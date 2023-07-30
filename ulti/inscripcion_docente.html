@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+    <meta http-equiv="CONTENT-TYPE" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
+    <link rel="shortcut icon" href="https://iset-tuc.infd.edu.ar/aula/static/14.05.00-45/skins/redinfod/img/comunes/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="./css/styleAdmin.css" />
+    <script
+        src="https://kit.fontawesome.com/c0959f9251.js" 
+        crossorigin="anonymous">
+    </script>
+
+    <?php 
+        if(isset($_SESSION['alumno_inscripto']) && $_SESSION['alumno_inscripto'] !== ""){
+            echo $_SESSION['alumno_inscripto'];
+            $_SESSION['alumno_inscripto'] = "";
+        }
+        else{
+            echo $_SESSION['alumno_inscripto'];
+            $_SESSION['alumno_inscripto'] = "";
+        }
+    ?>
+    <title>Agregar Docente | ISET Educativo</title>
+</head>
+    
+<body>
+    <div class="container">
+        <div class="navigation">
+            <ul>
+                <li>
+                    <a href="#">
+                        <span class="icon"><i class="fa-solid fa-user-tie"></i></span>
+                        <span class="title"><?php echo $_SESSION["u_nombre"] . ", " . $_SESSION["u_apellido"] ;?></span>
+                    </a>
+                </li>
+                <li class="hovered">
+                    <a href="inscripcion_docente.php">
+                        <span class="icon"><i class="fa-solid fa-person-chalkboard"></i></span>
+                        <span class="title">Inscripción Docente</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="inscripcion_alumno.php">
+                        <span class="icon"><i class="fa-solid fa-file-circle-plus"></i></span>
+                        <span class="title">Inscripción Alumno</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="icon"><i class="fa-solid fa-chalkboard-user"></i></span>
+                        <span class="title">Inscripción Coordinador</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="ver_notas_examen.php">
+                        <span class="icon"><i class="fa-regular fa-note-sticky"></i></span>
+                        <span class="title">Ver Notas Examenes</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="ver_notas_cursado.php">
+                        <span class="icon"><i class="fa-solid fa-receipt"></i></span>
+                        <span class="title"> Ver Notas Cursado</span>
+                    </a>
+                </li>
+                <li>
+                <li>
+                    <a href="loginAdmin.html">
+                        <span class="icon"><i class="fa-solid fa-arrow-right-from-bracket"></i></span>
+                        <span class="title">Cerrar</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="main">
+            <div class="topbar">
+                <div class="toggle"><i class="fa-solid fa-bars"></i></div>
+            </div>
+            <section id="panel-central">
+                <div class="panel-titulo">
+                    <h1>Perfil</h1>
+                </div>
+                <div class="tarjeta">
+                    <form action="carga_docente.php" method="POST" enctype="multipart/form-data">
+                        <div class="tarjeta-primera-seccion">
+                            <!-- AGREGAR UNA CLASE EN EL CSS PARA PODER ORDENAR LA SECCION DE LA FOTO -->
+                            <!-- CREAR CLASE tarjeta-foto-perfil -->
+                            <div class="tarjeta-foto-perfil">
+                                <div class="tarjeta-foto">
+                                    <img src="./img/images.png" alt="Foto de perfil del usuario">
+                                </div>
+                                <!-- CREAR CLASE tarjeta-carga -->
+                                <div class="tarjeta-carga">
+                                    <input type="file" id="foto" name="foto">
+                                </div>
+                            </div>
+                            <div class="tarjeta-datos-2">
+                                <div class="datos-titulo">
+                                    <h2>Datos personales</h2>
+                                </div>
+                                <div class="datos-entrada">
+                                    <div class="campo">
+                                        <div class="campo-titulo">
+                                            <label for="nombre">Nombre:</label>
+                                        </div>
+                                        <div class="campo-entrada">
+                                            <input type="text" id="nombre" name="nombre" placeholder="Juan" value="Juan">
+                                        </div>
+                                    </div>
+                                    <div class="campo">
+                                        <div class="campo-titulo">
+                                            <label for="apellido">Apellido:</label>
+                                        </div>
+                                        <div class="campo-entrada">
+                                            <input type="text" id="apellido" name="apellido" placeholder="Oscares" value="Peres">
+                                        </div>
+                                    </div>
+                                    <div class="campo">
+                                        <div class="campo-titulo">
+                                            <label for="domicilio">Domicilio:</label>
+                                        </div>
+                                        <div class="campo-entrada">
+                                            <input type="text" id="domicilio" name="domicilio" placeholder="Santiago" value="Marcos">
+                                        </div>
+                                    </div>
+                                    <div class="campo">
+                                        <div class="campo-titulo">
+                                            <label for="nro_domicilio">Nro. domicilio:</label>
+                                        </div>
+                                        <div class="campo-entrada">
+                                            <input type="number" id="nro_domicilio" name="nro_domicilio" placeholder="189" min="0" value="123">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="datos-entrada">
+                                    <div class="campo">
+                                        <div class="campo-titulo">
+                                            <label for="dni">Dni:</label>
+                                        </div>
+                                        <div class="campo-entrada">
+                                            <input type="number" id="dni" name="dni" placeholder="00.000.000" min="0" value="13123123">
+                                        </div>
+                                    </div>
+                                    <div class="campo">
+                                        <div class="campo-titulo">
+                                            <label for="celular">Celular:</label>
+                                        </div>
+                                        <div class="campo-entrada">
+                                            <input type="number" id="celular" name="celular" placeholder="xxxx-xxx-xxx" min="0" value="3815123123">
+                                        </div>
+                                    </div>
+                                    <div class="campo">
+                                        <div class="campo-titulo">
+                                            <label for="usuario">Usuario:</label>
+                                        </div>
+                                        <div class="campo-entrada">
+                                            <input type="email" id="usuario" name="usuario" placeholder="mi.mail@iset.com.ar" value="mail@mail.com">
+                                        </div>
+                                    </div>
+                                    <div class="campo">
+                                        <div class="campo-titulo">
+                                            <label for="rol">Rol:</label>
+                                        </div>
+                                        <div class="campo-entrada">
+                                            <input type="text" id="rol" name="rol" placeholder="Alumno" value="Docente" disabled>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tarjeta-segunda-seccion">
+                            <div class="tarjeta-datos">
+                                <div class="datos-titulo">
+                                    <h2>Datos académicos</h2>
+                                </div>
+                                <div class="datos-entrada">
+                                    <div class="campo">
+                                        <div class="campo-titulo">
+                                            <label for="carrera">Carrera:</label>
+                                        </div>
+                                        <div class="campo-entrada">
+                                            <!--<input type="text" id="carrera" name="carrera" placeholder="Tecnicatura Superior en Desarrollo de Software">-->
+                                            <select class="campo-entrada-option" name="carrera" id="carrera">
+                                                <option value="0" selected disabled>---&gt; SELECCIONE UNA CARRERA &lt;---</option>
+                                                <option value="1">Tecnicatura Superior en Desarrollo de Software</option>
+                                                <option value="2">Tecnicatura Superior en Bioenergía</option>
+                                                <option value="3">Tecnicatura Superior en Gestión Ambiental</option>
+                                                <option value="4">Tecnicatura Superior en Automatización y Robótica Industrial</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="campo">
+                                        <div class="campo-titulo">
+                                            <label for="anio">Año de ingreso:</label>
+                                        </div>
+                                        <div class="campo-entrada">
+                                            <input type="number" id="anio" name="anio" placeholder="2019" min="2000" max="3000" value="2021">
+                                        </div>
+                                    </div>
+                                    <div class="campo">
+                                        <div class="campo-titulo">
+                                            <label for="legajo">Legajo:</label>
+                                        </div>
+                                        <div class="campo-entrada">
+                                            <input type="text" id="legajo" name="legajo" placeholder="TSDS-19-001-A" disabled>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tarjeta-tercera-seccion">
+                            <div class="tarjeta-datos">
+                                <div class="datos-titulo">
+                                    <h2>Redes</h2>
+                                </div>
+                                <div class="datos-entrada">
+                                    <div class="campo">
+                                        <div class="campo-titulo">
+                                            <label for="rd_face">Facebook:</label>
+                                        </div>
+                                        <div class="campo-entrada">
+                                            <input type="url" id="rd_face" name="rd_face" placeholder="https://www.facebook.com/usuario" value="https://www.face.com.ar/user">
+                                        </div>
+                                    </div>
+                                    <div class="campo">
+                                        <div class="campo-titulo">
+                                            <label for="rd_insta">Instagram:</label>
+                                        </div>
+                                        <div class="campo-entrada">
+                                            <input type="url" id="rd_insta" name="rd_insta" placeholder="https://www.instagram.com/usuario" value="https://www.insta.com.ar/user">
+                                        </div>
+                                    </div>
+                                    <div class="campo">
+                                        <div class="campo-titulo">
+                                            <label for="rd_twitter">Twitter:</label>
+                                        </div>
+                                        <div class="campo-entrada">
+                                            <input type="url" id="rd_twitter" name="rd_twitter" placeholder="https://twitter.com/usuario" value="https://www.twr.com.ar/user">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="botones">
+                            <button id="btn-modif-clave">Modificar Clave</button>
+                            <button id="btn-modif-perfil">Modificar Perfil</button>
+                            <button id="btn-crear-perfil">Crear Perfil</button>
+                        </div>
+                    </form>
+                </div>
+                <div>
+                    <div class="panel-titulo">
+                        <h1>Errores</h1>
+                    </div>
+                    <div>
+                        <?php if (isset($_SESSION["errores"]) && $_SESSION["errores"] !== ""): ?>
+                            <div>
+                                <p>¡Errores encontrados!</p>
+                                <?php 
+                                    echo $_SESSION["errores"];
+                                    $_SESSION["errores"] = "";
+                                ?>
+                            </div>
+                        <?php else: ?>
+                            <div>
+                                <p>En este momento no se encontró ningun error, puede continuar inscribiendo los docentes.</p>
+                            </div>
+                        <?php endif; ?>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+    
+    <script src="js/appAlumno.js"></script>
+    <script src="js/inscripciones.js"></script>
+    <script src="js/validaciones.js"></script>
+</body>
+</html>

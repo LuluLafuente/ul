@@ -1,0 +1,764 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+:root
+{
+    --blue: #368FEF;
+    --white: #fff;
+    --grey: #f5f5f5;
+    --black1: #222;
+    --black2: #999;
+}
+body
+{
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+html
+{
+    scroll-behavior: smooth;
+}
+.container
+{
+  position: relative;
+  width: 100%; 
+}
+.navigation
+{
+    position: fixed;
+    width: 300px;
+    height: 100%;
+    background: var(--blue);
+    border-left:10px solid var(--blue);
+    transition: 0.5%;
+    overflow: hidden;
+}
+.navigation.active
+{
+   width: 80px; 
+
+}
+.navigation ul
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+}
+.navigation ul li
+{
+    position:relative;
+    width: 100%;
+    list-style: none;
+    border-top-left-radius: 30px;
+    border-bottom-left-radius: 30px;
+
+}
+.navigation ul li:hover,
+.navigation ul li.hovered
+{
+    background: var(--white);
+}
+.navigation ul li:nth-child(1)
+{
+    margin-bottom: 40px;
+    pointer-events: none;
+}
+.navigation ul li a
+{
+    position: relative;
+    display: block;
+    width: 100%;
+    display: flex;
+    text-decoration: none;
+    color: var(--white);
+}
+.navigation ul li:hover a,
+.navigation ul li.hovered a
+{
+    color: var(--blue);
+}
+.navigation ul li a .icon
+{
+    position: relative;
+    display: block;
+    min-width: 60px;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+}
+.navigation ul li a .icon i
+{
+ font-size: 1,75em;   
+}
+.navigation ul li a .title
+{
+    position: relative;
+    display: block;
+    padding: 0 10px;
+    height: 60px;
+    line-height:  60px;
+    text-align: start;
+    white-space: nowrap;
+}
+.navigation ul li:hover a::before,
+.navigation ul li.hovered a::before
+{
+    content: '';
+    position: absolute;
+    right: 0;
+    top: -50px;
+    width: 50px;
+    height: 50px;
+    background: transparent;
+    border-radius: 50%;
+    box-shadow: 35px 35px 0 10px var(--white);
+    pointer-events: none;
+}
+.navigation ul li:hover a::after,
+.navigation ul li.hovered a::after
+{
+    content: '';
+    position: absolute;
+    right: 0;
+    bottom: -50px;
+    width: 50px;
+    height: 50px;
+    background: transparent;
+    border-radius: 50%;
+    box-shadow: 35px -35px 0 10px var(--white);
+    pointer-events: none;
+}
+
+/*Menu*/
+.main
+{
+    position: absolute;
+    width: calc(100% - 300px);
+    left: 300px;
+    min-height: 100vh;
+    background: var(--white);
+    transition: 0.5%;
+}
+.main.active
+{
+    width: calc(100% - 80px);
+    left: 80px;
+}
+.main .topbar
+{
+    width: 100%;
+    height: 60px;
+    background: var(--blue);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+}
+.toggle
+{
+    position: relative;
+    top: -29px;
+    width: 6px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2.5em;
+    cursor: pointer;
+}
+.toggle ::before
+{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    line-height: 60px;
+    font-size: 24px;
+    text-align: center;
+}
+.user
+{
+    position: relative;
+    min-width: 50px;
+    height: 50px;
+    min-width: 50px;
+    width: 50px;
+    border-radius: 50%;
+    overflow: hidden;
+    cursor: pointer;
+}
+.user img
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.acordeon
+{
+    width: 90%;
+    max-width: 120em;
+    padding: 2em;
+    box-shadow: 0 0 1px rgba(0,0,0,0.1);
+
+}
+.acordeon .bloque
+{
+    margin: 0 0 1em;
+    padding: 1em;
+}
+.acordeon .h2
+{
+    font-family: "Poppins", sans-serif;
+    width: 100%;
+    font-weight: bold;
+    color: var(--white);
+    background-color: var(--blue);
+    margin: 0 0 1em;
+    padding: 1em;
+}
+.acordeon .contenido
+{
+    height: 0;
+    padding: 0;
+    overflow: hidden;
+    transition: all .5s case;
+}
+.acordeon .bloque.active .contenido /*Dependiendo la cantidad de contenido cambiar altura*/
+{
+    height: 4em;
+}
+.acordeon .table
+{
+    height: 0;
+    padding: 0;
+    overflow: hidden;
+    border-radius: 50%;
+}
+.section [id]
+{
+    scroll-margin-top: 100px;
+    width: 100%;
+    max-width: 120em;
+    padding: 80%;
+    box-shadow: 0 0 1px rgba(0,0,0,0.1);
+}
+section .h2
+{
+    font-family: "Poppins", sans-serif;
+    width: 100%;
+    font-weight: bold;
+    color: var(--white);
+    background-color: var(--blue);
+    margin: 0 0 1em;
+    padding: 1em;
+}
+
+#constancias{
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+}
+
+#cont-constancia{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px 0px;
+}
+
+#cont-constancia-titulo{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin: 40px 0px;
+}
+
+#cont-constancia-sub-titulo{
+    margin: 20px 0px;
+}
+
+#cont-constancia-textos{
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    width: 80%;
+}
+
+#cont-constancia-validacion{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px 0px;
+}
+
+#cont-constancia-seleccionables{
+    width: 90%;
+}
+
+#cont-constancia-tipo{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+#cont-constancia-rellenable{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.cardBox
+{
+    position: relative;
+    width: 100%;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-gap: 30px;
+}
+
+.cardBox .card
+{
+    position: relative;
+    background: var(--white);
+    padding: 30px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+    box-shadow: 0 7px 25px rgba(0, 0, 0, 0.08);
+} 
+.cardBox .cardName
+{
+    position: relative;
+    font-weight: 500;
+    font-size: 1.5em;
+    color: var(--black1);
+    text-align: center;
+    margin-top: 5px;
+}
+.cardBox .iconBx
+{
+    font-size: 3.5em;
+    color: var(--blue);
+}
+.cardBox .card:hover
+{
+    background: var(--grey);
+}
+.details
+{
+    position: relative;
+    width: 100;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    grid-gap: 30px;
+}
+.details .Alumnos
+{
+    position: relative;
+    display: grid;
+    min-height: 300px;
+    background: var(--white);
+    padding: 20px;
+    box-shadow: 07px 25px rgba(0, 0, 0, 0.08);
+    border-radius: 20px;
+}
+.cardHeader
+{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+.cardHeader h2
+{
+    font-weight: 600;
+    color: var(--blue);
+}
+.btn button
+{
+    margin-right: 20px;
+    border-radius: 20px;
+    height: 30px;
+    width: 100px;
+    position: absolute;
+    border: solid #3371af;
+}
+.details table
+{
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+.details table thead td
+{
+    font-weight: 600;
+}
+
+.details input
+{
+    font-family: "Poppins", sans-serif;
+    max-width: 380px;
+  width: 100%;
+  background-color: #f0f0f0;
+  margin: 10px 0;
+  height: 55px;
+  border-radius: 55px;
+  display: grid;
+  grid-template-columns: 15% 85%;
+  padding: 0 0.4rem;
+  position: relative;
+}
+
+
+#principal{
+  
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+
+#panel-central{
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  margin: 20px 0px 0px 20px;
+  /*background-color: violet;*/
+}
+
+.panel-titulo{
+  margin: 0px 0px 10px 0px;
+}
+
+.tarjeta{
+  width: 100%;
+  /*background-color: red;*/
+}
+
+.tarjeta-primera-seccion{
+  /*background-color: orangered;*/
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.tarjeta-foto{
+  width: 180px;
+  height: 180px;
+  min-width: 180px;
+  min-height: 180px;
+  overflow: hidden;
+}
+
+.tarjeta-foto img{
+  width: 180px;
+  height: 180px;
+}
+
+.tarjeta-datos{
+  /*background-color: yellow;*/
+  margin: 10px 10px 0px 10px;
+}
+
+.tarjeta-datos-2{
+  width: 75%;
+  margin: 10px 10px 0px 10px;
+}
+
+.datos-entrada{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  /*background-color: blue;*/
+  overflow: hidden;
+  padding: 2px 0px 2px 0px;
+}
+.campo{
+  box-sizing: border-box;
+  /*background-color: orange;*/
+  width: 23%;
+}
+
+.campo-titulo{
+  margin: 5px 0px 5px 0px;
+}
+
+.campo-entrada{
+  margin: 5px 0px 5px 0px;
+  width: 100%;
+  /*background-color: yellow;*/
+}
+
+.campo-entrada input{
+  height: 30px;
+  width: 92%;
+  padding: 3px;
+  /*background-color: yellowgreen;*/
+  border: 2px solid black;
+  border-radius: 15px;
+}
+
+.botones{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 10px;
+}
+
+.botones button{
+  width: 30%;
+  padding: 12px 0px 12px 0px;
+  margin: 0px 0px 4px 0px;
+  background-color: white;
+  border-radius: 8px
+}
+
+#btn-modif-perfil{
+  border: solid blue 2px;
+}
+
+#btn-modif-clave{
+  border: solid red 2px;
+}
+
+#btn-crear-perfil{
+  border: solid green 2px;
+  background-color: greenyellow;
+}
+/*************************************/
+/************* MOBILE ****************/
+/*************************************/
+
+@media only screen and (max-width: 700px) {
+  
+  .navegador{
+    display: none;
+  }
+  
+  #panel-lateral{
+    display: none;
+  }
+  
+  #panel-central{
+    margin: 0px;
+  }
+  
+  .tarjeta{
+    width: 100%;
+  }
+
+  .tarjeta-datos{
+    width: 100%;
+  }
+
+  .tarjeta-datos-2{
+    width: 100%;
+  }
+
+  .tarjeta form{
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .tarjeta-foto{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+  }
+  
+  
+  .tarjeta-primera-seccion{
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .datos-entrada{
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .campo{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .campo-entrada{
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .campo-entrada input{
+    width: 95%;
+  }
+  
+  .botones{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .botones button{
+   width: 100%;
+  }
+}
+
+.form{
+    background-color:var(--blue);
+    width: 100%;
+    margin: 80px auto;
+    max-width: 900px;
+    border-radius: 1em;
+    padding: 3.5em 1.5em;
+}
+.contacto{
+    background-image: linear-gradient(-225deg, rgb(71, 59, 123) 0%, #3584A7 51%, #30D2BE 100%);
+    width: 100%;
+    margin: auto;
+    max-width: 900px;
+    border-radius: 1em;
+    padding: 3.5em 1.5em;
+}
+.form_container{
+    width: 100%;
+    display: grid;
+    gap: 1em;
+    grid-auto-columns: 100%;
+}
+
+.form_title{
+    color:var(--white);
+    text-align: center;
+    font-size: 1.9em;
+    margin-bottom: .4em;
+}
+ .form_input{
+    font-family: inherit;
+    font-size: 1rem;
+    padding: .8em 1em;
+    outline: none;
+    border: none;
+    border: 1px solid #30D2BE ;
+    border-radius:  0.2em;
+ }
+
+ .form_input--message{
+    resize: none;
+    padding: 1.8em 1em;
+    margin-bottom: .5em;
+ }
+
+ .form_cta{
+    width: 150px;
+    background-color:#063c75;
+    border: none;
+    outline: none;
+    height: 49px;
+    border-radius: 49px;
+    color: #fff;
+    text-transform: uppercase;
+    font-weight: 600;
+    margin: 10px auto;
+    cursor: pointer;
+    transition: 0.5s;
+ }
+  
+ 
+.line{
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    height: 2px;
+    background: #fff;
+    margin-bottom: 60px;
+}
+
+/*************************************/
+/************* MOBILE ****************/
+/*************************************/
+
+@media only screen and (max-width: 370px) {
+  
+  .navegador{
+    display: none;
+  }
+  
+  #panel-lateral{
+    display: none;
+  }
+  
+  #panel-central{
+    margin: 0px;
+  }
+  
+  .tarjeta{
+    width: 100%;
+  }
+
+  .tarjeta-datos{
+    width: 100%;
+  }
+
+  .tarjeta-datos-2{
+    width: 100%;
+  }
+  
+  .tarjeta form{
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .tarjeta-foto{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+  }
+  
+  
+  .tarjeta-primera-seccion{
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .datos-entrada{
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .campo{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .campo-entrada{
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .campo-entrada input{
+    width: 90%;
+  }
+  
+  .botones{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .botones button{
+   width: 100%;
+  }
+}

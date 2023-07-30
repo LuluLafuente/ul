@@ -1,0 +1,87 @@
+<!--Vista Alumno-->
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script
+            src="https://kit.fontawesome.com/c0959f9251.js" 
+            crossorigin="anonymous">
+        </script>
+        <link rel="stylesheet" href="./css/stylePortal.css" />
+        <link rel="icon" href="https://iset-tuc.infd.edu.ar/sitio/wp-content/plugins/edupress-escuela/public/skins/redinfod/img/favicon_32x32.png" sizes="32x32">
+        <link rel="icon" href="https://iset-tuc.infd.edu.ar/sitio/wp-content/plugins/edupress-escuela/public/skins/redinfod/img/favicon_192x192.png" sizes="192x192">
+        <title>Portal Alumno</title>
+    </head>
+    <body>
+        <!--Panel lateral con opciones-->
+        <div class="container">
+            <div class="navigation">
+                <ul>
+                    <li>
+                        <a href="#">
+                            <span class="icon"><i class="fa-solid fa-user-graduate"></i></span>
+                            <span class="title"><?php echo $_SESSION["u_nombre"] . ", " . $_SESSION["u_apellido"] ;?></span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="libreta.php">
+                            <span class="icon"><i class="fa-regular fa-file-lines"></i></span>
+                            <span class="title">Libreta</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="historia.php">
+                            <span class="icon"><i class="fa-solid fa-graduation-cap"></i></span>
+                            <span class="title">Historia académica</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="constancias.php">
+                            <span class="icon"><i class="fa-regular fa-square-check"></i></span>
+                            <span class="title">Costancias</span>
+                            <!--Links para solicitar constancias en proceso-->
+                        </a>
+                    </li>
+                    <li>
+                        <a href="plan.php">
+                            <span class="icon"><i class="fa-solid fa-file-invoice"></i></span>
+                            <span class="title">Plan de estudios</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="contacto.php">
+                            <span class="icon"><i class="fa-solid fa-question"></i></span>
+                            <span class="title">Ayuda</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="cerrar_sesion.php">
+                            <span class="icon"><i class="fa-solid fa-arrow-right-from-bracket"></i></span>
+                            <span class="title">Cerrar</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <!--Menu-->
+            <div class="main">
+                <div class="topbar">
+                    <div class="toggle"><i class="fa-solid fa-bars"></i></div>
+                        <div class="user">
+                            <img src="<?php echo $_SESSION['u_foto'] ;?>" alt="Imagen de Usuario">
+                        </div>
+                    </div>
+                    <section id="panel-central">
+                        <div class="panel-titulo">
+                            <h1>Bienvenido/a <?php echo $_SESSION["u_nombre"] . ", " . $_SESSION["u_apellido"] ;?></h1>
+                        </div>
+                        <div class="tarjeta">
+                            <p>Elija una opcion del menu lateral para continuar</p>
+                        </div>
+                    </section>
+                </div>
+            </div>
+                
+        <br>
+    </body>
+</html>

@@ -1,0 +1,137 @@
+<!--Vista Historia academica Alumno-->
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://kit.fontawesome.com/c0959f9251.js" crossorigin="anonymous">
+    </script>
+    <link rel="stylesheet" href="./css/stylePortal.css" />
+    <link rel="icon"
+        href="https://iset-tuc.infd.edu.ar/sitio/wp-content/plugins/edupress-escuela/public/skins/redinfod/img/favicon_32x32.png"
+        sizes="32x32">
+    <link rel="icon"
+        href="https://iset-tuc.infd.edu.ar/sitio/wp-content/plugins/edupress-escuela/public/skins/redinfod/img/favicon_192x192.png"
+        sizes="192x192">
+
+    <title>Portal Alumno</title>
+</head>
+
+<body>
+    <!--Panel lateral con opciones-->
+    <div class="container">
+        <div class="navigation">
+            <ul>
+                <li>
+                    <a href="#">
+                        <span class="icon"><i class="fa-solid fa-user-graduate"></i></span>
+                        <span class="title">
+                            <?php echo $_SESSION["u_nombre"] . ", " . $_SESSION["u_apellido"] ;?>
+                        </span>
+                    </a>
+                </li>
+                <li>
+                    <a href="libreta.php">
+                        <span class="icon"><i class="fa-regular fa-file-lines"></i></span>
+                        <span class="title">Libreta</span>
+
+                    </a>
+                </li>
+                <li class="hovered">
+                    <a href="historia.php">
+                        <span class="icon"><i class="fa-solid fa-graduation-cap"></i></span>
+                        <span class="title">Historia académica</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="constancias.php">
+                        <span class="icon"><i class="fa-regular fa-square-check"></i></span>
+                        <span class="title">Costancias</span>
+                        <!--Links para solicitar constancias en proceso-->
+                    </a>
+                </li>
+                <li>
+                    <a href="plan.php">
+                        <span class="icon"><i class="fa-solid fa-file-invoice"></i></span>
+                        <span class="title">Plan de estudios</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="contacto.php">
+                        <span class="icon"><i class="fa-solid fa-question"></i></span>
+                        <span class="title">Ayuda</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="cerrar_sesion.php">
+                        <span class="icon"><i class="fa-solid fa-arrow-right-from-bracket"></i></span>
+                        <span class="title">Cerrar</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <!--Menu-->
+        <div class="main">
+            <div class="topbar">
+                <div class="toggle"><i class="fa-solid fa-bars"></i></div>
+            </div>
+            <div class="contenido">
+                <!-- esto se abre al hacer click en historia o estado academico Tablas e  info-->
+                <section class="historia" id="historia">
+                    <div class="acordeon">
+                        <h2>Constancia de Situación Académica Analítica</h2>
+                        <br>
+                        <p>El Instituto Superior de Educación Tecnológica(ISET)- sito en Domingo Garcia 47-, hace
+                            constar que
+                            <?php echo $_SESSION["u_apellido"] . ", ". $_SESSION["u_nombre"];?>
+                            que pertenece a la segunda cohorte de la Carrera de *Insertar Carrera*, Resol. Minist.
+                            N°513/5(Med)-2014, tiene las siguientes materias aprobadas:
+                        </p>
+                        <br>
+
+                        <table class="styled-table">
+                            <thead>
+                                <tr>
+                                    <th>Asignaturas</th>
+                                    <th>Nota</th>
+                                    <th>Acta N°</th>
+                                    <th>Fecha</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th>
+                                        <!--Asignaturas-->
+                                        <hr>
+                                        <?php for ($i=0; $i < $consulta->rowCount(); $i++): ?>
+                                        <?php if ($resultado[$i]["nota"] != 0): ?>
+                                            <?php echo $resultado[$i]['nombre']; ?>
+                                        <hr>
+                                        <?php endif; ?>
+                                        <?php endfor; ?>
+                                    </th>
+                                    <th>
+                                        <!--Notas-->
+                                        <hr>
+                                        <?php for ($i=0; $i < $consulta->rowCount(); $i++): ?>
+                                        <?php if ($resultado[$i]["nota"] != 0): ?>
+                                            <?php echo $resultado[$i]['nota']; ?>
+                                        <hr>
+                                        <?php endif; ?>
+                                        <?php endfor; ?>
+                                    </th>
+                                    <th>
+                                        <!--Num de Acta-->
+
+                                    </th>
+
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+            </div>
+            <script src="js/appAlumno.js"></script> 
+</body>
+
+</html>

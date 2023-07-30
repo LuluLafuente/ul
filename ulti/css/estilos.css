@@ -1,0 +1,119 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    -webkit-box-sizing: border-box ;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    }
+
+body {
+    background-color: dodgerblue;
+    color: black;
+}
+
+#contenedor {
+    width:960px ;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+header {
+    height: auto;
+    
+}
+
+header h1 {
+    font-size: 50px;
+    display: flex;
+    justify-content: center;
+
+}
+
+nav {
+    max-width: 1000px;
+    margin: auto;
+    background: rgb(8, 65, 112, 0.616);
+    font-size: 20px;
+    margin-top: 50px;
+
+}
+
+.Menu {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+}
+
+.Menu > li > a {
+    display: block;
+    padding: 10px 15px;
+    color: white;
+    text-decoration: none;
+}
+
+.Menu > li:hover {
+    background-color:dodgerblue;
+}
+
+.SubMenu {
+    position: absolute;
+    display: none;
+    list-style: none;
+    width: 200px;
+    background-color: rgba(0, 0, 0, .5);
+}
+
+.Menu li:hover .SubMenu {
+    display: block;
+}
+
+.SubMenu li:hover {
+    background-color: dodgerblue;
+
+}
+
+.SubMenu li a {
+    display: block;
+    color: white;
+    padding: 15px 15px 15px 20px;
+    text-decoration: none;
+}
+
+#contenido {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 700px;
+    height: 500px;
+    float: left;
+    background-color: aliceblue;
+    margin-top: 10px;
+    margin-right: 10px;
+    margin-bottom: 20px;
+}
+
+aside {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 250px;
+    height: 500px;
+    background-color: rgb(11, 184, 170);
+    margin-top: 10px;
+    float: right;
+}
+
+footer {
+    background:rgb(8, 65, 112, 0.616);
+    clear: both;
+    bottom: 0;
+    
+    
+    }
+footer h2 {
+    font-size: 40px;
+    text-align: center;
+    padding: 20px;
+    font-style: italic;
+}

@@ -1,0 +1,31 @@
+/* Redondear Logo*/
+.banner_img img {
+  border-radius: 50%;
+  }
+
+
+  /*Movimiento*/
+
+.banner_img {
+  float: left;
+  animation: movimiento 2.5s linear infinite;
+  
+}
+
+.banner_img img {
+  width: 100px;
+  height: 100px;
+  display: block;
+}
+
+@keyframes movimiento {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(30px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}

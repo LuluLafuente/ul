@@ -1,0 +1,158 @@
+<!--Vista constacia Alumno-->
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script
+        src="https://kit.fontawesome.com/c0959f9251.js" 
+        crossorigin="anonymous">
+        </script>
+        <link rel="icon" href="https://iset-tuc.infd.edu.ar/sitio/wp-content/plugins/edupress-escuela/public/skins/redinfod/img/favicon_32x32.png" sizes="32x32">
+        <link rel="icon" href="https://iset-tuc.infd.edu.ar/sitio/wp-content/plugins/edupress-escuela/public/skins/redinfod/img/favicon_192x192.png" sizes="192x192">
+        <link rel="stylesheet" href="./css/portalAlumnos.css"/>
+        <link rel="stylesheet" href="./css/styleAlumno.css" />
+        <title>Portal Alumno</title>
+    </head>
+    <body>
+        <!--Panel lateral con opciones-->
+        <div class="container">
+            <div class="navigation">
+                <ul>
+                    <li>
+                        <a href="#">
+                            <span class="icon"><i class="fa-solid fa-user-graduate"></i></span>
+                            <span class="title"><?php echo $_SESSION["u_nombre"] . ", " . $_SESSION["u_apellido"] ;?></span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="libreta.php">
+                            <span class="icon"><i class="fa-regular fa-file-lines"></i></span>
+                            <span class="title">Libreta</span>
+
+                        </a>
+                    </li>
+                    <li>
+                        <a href="historia.php">
+                            <span class="icon"><i class="fa-solid fa-graduation-cap"></i></span>
+                            <span class="title">Historia académica</span>
+                        </a>
+                    </li>
+                    <li class="hovered">
+                        <a href="constancias.php">
+                            <span class="icon"><i class="fa-regular fa-square-check"></i></span>
+                            <span class="title">Costancias</span>
+                            <!--Links para solicitar constancias en proceso-->
+                        </a>
+                    </li>
+                    <li>
+                        <a href="plan.php">
+                            <span class="icon"><i class="fa-solid fa-file-invoice"></i></span>
+                            <span class="title">Plan de estudios</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="contacto.php">
+                            <span class="icon"><i class="fa-solid fa-question"></i></span>
+                            <span class="title">Ayuda</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="cerrar_Sesion.php">
+                            <span class="icon"><i class="fa-solid fa-arrow-right-from-bracket"></i></span>
+                            <span class="title">Cerrar</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <!--Menu-->
+            <div class="main">
+                <div class="topbar">
+                    <div class="toggle">
+                        <i class="fa-solid fa-bars"></i>
+                    </div>
+                    <div class="user">
+                        <img src="<?php echo $_SESSION['u_foto'] ;?>" alt="Imagen de Usuario">
+                    </div>
+                </div>
+                <div class="contenido">
+                    <!-- esto se abre al hacer click en libreta o estado academico Tablas e info-->
+                    <section class="historia" id="historia">                   
+                        <div class="acordeon">
+                            <h2>Constancias --> descarga aqui tus constancias </h2>
+                            <div id="cont-constancia">
+                                <div id="cont-constancia-seleccionables">
+                                    <div id="cont-constancia-tipo">
+                                        <div>
+                                            <input type="radio" name="alumno-constancia" id="alumno-regular" value="0" checked>
+                                            <label for="alumno-regular">Alumno Regular</label>
+                                        </div>
+                                        <div>
+                                            <input type="radio" name="alumno-constancia" id="alumno-examen" value="1">
+                                            <label for="alumno-examen">Examen</label>
+                                        </div>
+                                        <div>
+                                            <input type="radio" name="alumno-constancia" id="alumno-aprobadas" value="2">
+                                            <label for="alumno-aprobadas">Materias Aprobadas</label>
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <div id="cont-constancia-rellenable">
+                                        <div class="rellenable">
+                                            <label for="interesado">Interesado</label>
+                                            <input type="text" name="interesado" id="interesado-campo">
+                                        </div>
+                                        <div class="rellenable">
+                                            <label for="cant-copias">Cantidad de copias</label>
+                                            <input type="number" name="cant-copias" id="cant-copias-campo" value="1" min="1" max="5">
+                                        </div>
+                                        <div class="rellenable">
+                                            <label for="observaciones">Observaciones</label>
+                                            <input type="text" name="observaciones" id="observaciones-campo">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div id="cont-constancia-titulo">
+                                    <img src="img/imagen-certificado-1.png" alt="">
+                                    <h2>Instituto Superior de Educación Tecnológica</h2>
+                                </div>
+                                <div id="cont-constancia-sub-titulo">
+                                    <h3>Certificado <span id="certificado-titulo">Alumno Regular</span></h3>
+                                </div>
+                                <div id="cont-constancia-textos">
+                                    <p>
+                                        El Instituto Superior de Educación Tecnológica certifica que el alumno <span id="alumno"><?php echo $_SESSION["u_nombre"] . " " . $_SESSION["u_apellido"] ;?></span>
+                                        con legajo <span id="legajo"><?php echo $_SESSION["u_legajo"] ;?></span> y dni <span id="dni"><?php echo $_SESSION["u_dni"] ;?></span> , actualmente se encuentra en condición de regular 
+                                        en la carrera <span id="carrera"><?php echo $_SESSION["u_carrera"] ;?></span> con resolución <span id="resolucion"></span> habiendo ingresado en el año <span id="fdi-ingreso"></span>. <br><br>
+                                        Se emite el presente certificado para ser presentado ante <span id="interesado"></span>, 
+                                        se extiende el mismo en la ciudad de San Miguel de Tucumán, a los <span id="fdh-dia"></span> 
+                                        días del mes de <span id="fdh-mes"></span> de <span id="fdh-anio"></span>.
+                                    </p>
+                                    <div id="cont-constancia-validacion">
+                                        <h4>Código de validación</h4>
+                                        <img src="img/imagen-certificado-2.png" alt="">
+                                        <h4>&rarr; <span id="codigo-validacion"></span> &larr;</h4>
+                                    </div>
+                                    <p>
+                                        El presente certificado puede ser validado en la pagina de la institución <span id="pagina-validacion"></span> ingresando el código que se detalla arriba.
+    
+                                        El certificado cuenta con una vigencia de <span id="dias-vigencia"></span> día/s a partir de la fecha de emisión del mismo.<br><br>
+                                    </p>
+                                    <p>
+                                        <strong>Observaciones</strong>:
+                                    </p> 
+                                    <p id="observaciones"></p>
+                                </div>
+                                <div>
+                                    <p>Fecha de emisión de la constancia: <span id="fecha-completa"></span>.</p>
+                                </div>
+                            </div>                    
+                        </div> 
+                    </section> 
+                </div>      
+            </div>
+        </div>
+        <script src="js/appAlumno.js"></script>  
+        <script src="./js/constancia_alumno.js"></script> 
+    </body>
+</html>

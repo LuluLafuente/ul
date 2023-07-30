@@ -1,0 +1,129 @@
+<!--Vista notas examen Administracion-->
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+    <meta http-equiv="CONTENT-TYPE" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
+    <link rel="shortcut icon" href="https://iset-tuc.infd.edu.ar/aula/static/14.05.00-45/skins/redinfod/img/comunes/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="./css/styleAdministrador.css" />
+    <script
+        src="https://kit.fontawesome.com/c0959f9251.js" 
+        crossorigin="anonymous">
+    </script>
+    <title>Registrar Notas de Examen Final | ISET Educativo</title>
+</head>
+<body>
+    <div class="container">
+        <!--Panel lateral con opciones-->
+        <div class="navigation">
+            <ul>
+                <li>
+                    <a href="#">
+                        <span class="icon"><i class="fa-solid fa-user-tie"></i></span>
+                        <span class="title"><?php echo $_SESSION["u_nombre"] . ", " . $_SESSION["u_apellido"] ;?></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="inscripcion_docente.php">
+                        <span class="icon"><i class="fa-solid fa-person-chalkboard"></i></span>
+                        <span class="title">Inscripción Docente</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="inscripcion_alumno.php">
+                        <span class="icon"><i class="fa-solid fa-file-circle-plus"></i></span>
+                        <span class="title">Inscripción Alumno</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="icon"><i class="fa-solid fa-chalkboard-user"></i></span>
+                        <span class="title">Inscripción Coordinador</span>
+                    </a>
+                </li>
+                 <li class="hovered">
+                    <a href="ver_notas_examen.php">
+                        <span class="icon"><i class="fa-regular fa-note-sticky"></i></span>
+                        <span class="title">Ver Notas Examenes</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="ver_notas_cursado.php">
+                        <span class="icon"><i class="fa-solid fa-receipt"></i></span>
+                        <span class="title"> Ver Notas Cursado</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="loginAdmin.html">
+                        <span class="icon"><i class="fa-solid fa-arrow-right-from-bracket"></i></span>
+                        <span class="title">Cerrar</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="main">
+            <!--Menu-->
+            <div class="topbar">
+                <div class="toggle"><i class="fa-solid fa-bars"></i></div>
+            </div>
+            <div class="contenido">
+                <section class="ver_Notas_Examen">
+                    <div class="acordeon">
+                        <h2> - Notas de examenes - Alumnos </h2>
+                        <br>
+                        <p>El Instituto Superior de Educación Tecnológica(ISET)- sito en Domingo Garcia 47-</p>
+                        <br>
+        <table class="styled-table">
+            <thead>
+                <tr>
+                    <th>DNI</th>
+                    <th>Alumno</th>
+                    <th>Asignatura</th>
+                    <th>1er Parcial</th>
+                    <th>2do Parcial</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th>
+                        <!--DNI Alumno-->
+                        <hr>
+                  
+                        <hr>
+                       
+                    </th>
+                    <th>
+                        <!--Alumnos-->
+                        <hr>
+                        
+                        <hr>
+                    </th>
+                    <th>
+                        <!--Asignaturas-->
+                        <hr>
+                        <?php for ($i=0; $i < $consulta->rowCount(); $i++): ?>
+                            <?php echo $resultado[$i]['nombre']; ?>
+                        <hr>
+                        <?php endfor; ?>
+                    </th>
+                    <th>
+                        <!--Notas 1er parcial-->
+                        <hr>
+                        
+                        <hr>
+                    </th>
+                    <th>
+                        <!--Notas 2do Parcial-->
+                        <hr>
+                       
+                        <hr>
+                       
+                    </th>
+                </tr>
+            </tbody>
+        </table>
+    </div>    
+    <script src="./js/appAlumno.js"></script> 
+</body>
+</html>

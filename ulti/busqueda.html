@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <link rel="shortcut icon" href="img/logo enlace.png">
+    <title>Busqueda - Alumno</title>
+    <link rel="stylesheet" href="bootstrap-5.2.2/css/bootstrap-grid.css">
+    <link rel="stylesheet" href="bootstrap-5.2.2/css/bootstrap-grid.css.map">
+    <link rel="stylesheet" href="bootstrap-5.2.2/css/bootstrap-grid.min.css">
+    <link rel="stylesheet" href="bootstrap-5.2.2/css/bootstrap-grid.min.css.map">
+    <link rel="stylesheet" href="bootstrap-5.2.2/css/bootstrap-grid.rtl.css">
+    <link rel="stylesheet" href="bootstrap-5.2.2/css/bootstrap-grid.rtl.css.map">
+    <link rel="stylesheet" href="bootstrap-5.2.2/css/bootstrap-grid.rtl.min.css">
+    <link rel="stylesheet" href="bootstrap-5.2.2/css/bootstrap-grid.rtl.min.css.map">
+    <link rel="stylesheet" href="bootstrap-5.2.2/css/bootstrap-reboot.rtl.css">
+    <link rel="stylesheet" href="bootstrap-5.2.2/css/bootstrap-reboot.rtl.css.map">
+    <link rel="stylesheet" href="bootstrap-5.2.2/css/bootstrap-reboot.rtl.min.css">
+    <link rel="stylesheet" href="bootstrap-5.2.2/css/bootstrap-reboot.rtl.min.css.map">
+    <link rel="stylesheet" href="bootstrap-5.2.2/css/bootstrap-reboot.css">
+    <link rel="stylesheet" href="bootstrap-5.2.2/css/bootstrap-reboot.css.map">
+    <link rel="stylesheet" href="bootstrap-5.2.2/css/bootstrap-reboot.min.css">
+    <link rel="stylesheet" href="bootstrap-5.2.2/css/bootstrap-reboot.min.css.map">
+    <link rel="stylesheet" href="bootstrap-5.2.2/css/bootstrap-utilities.css">
+    <link rel="stylesheet" href="bootstrap-5.2.2/css/bootstrap-utilities.css.map">
+    <link rel="stylesheet" href="bootstrap-5.2.2/css/bootstrap-utilities.min.css">
+    <link rel="stylesheet" href="bootstrap-5.2.2/css/bootstrap-utilities.min.css.map">
+    <link rel="stylesheet" href="bootstrap-5.2.2/css/bootstrap-utilities.rtl.css">
+    <link rel="stylesheet" href="bootstrap-5.2.2/css/bootstrap-utilities.rtl.css.map">
+    <link rel="stylesheet" href="bootstrap-5.2.2/css/bootstrap-utilities.rtl.min.css">
+    <link rel="stylesheet" href="bootstrap-5.2.2/css/bootstrap-utilities.rtl.min.css.map">
+    <link rel="stylesheet" href="bootstrap-5.2.2/css/bootstrap.css">
+    <link rel="stylesheet" href="bootstrap-5.2.2/css/bootstrap.css.map">
+    <link rel="stylesheet" href="bootstrap-5.2.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="bootstrap-5.2.2/css/bootstrap.min.css.map">
+    <link rel="stylesheet" href="bootstrap-5.2.2/css/bootstrap.rtl.css">
+    <link rel="stylesheet" href="bootstrap-5.2.2/css/bootstrap.rtl.css.map">
+    <link rel="stylesheet" href="bootstrap-5.2.2/css/bootstrap.rtl.min.css">
+    <link rel="stylesheet" href="bootstrap-5.2.2/css/bootstrap.rtl.min.css.map">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <link rel="stylesheet" href="css/Busqueda.css">
+</head>
+
+<body>
+
+    <div class="container-fluid">
+
+        <!--logo-buscador-perfil-->
+
+        <header class="header row">
+            <div class="color0 col-md-12">
+                <div class="Logo">
+                    <img src="img/logo_iset_terminado.jpg" alt="">
+                    <div>
+                        <input type="search" placeholder="Buscar Alumno, Materia, etc.">
+                        <i class="fa fa-search"></i>
+                    </div>
+                    <div class="btn">
+                        <button>Perfil</button>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+
+
+        <!--titulo opcion - -->
+
+        <div class="titulo">
+            <div class="row">
+                <div class="color1 col-md-12">
+                    <h2>Busquedas:</h2>
+                </div>
+            </div>
+        </div>
+
+        <!--Seccion main-->
+
+        <section class="row">
+            <aside class="color3 col-md-4">
+                <div class="Lista-Botones">
+                    <a href="#" id="botones-lista"><i class='fas fa-clipboard'></i>Carga de Notas - Cursado</a>
+                    <a href="#" id="botones-lista"><i class='fas fa-clipboard'></i>Carga de Notas - Examen</a>
+                    <a href="#" id="botones-lista"><i class='fas fa-clipboard'></i>Ver Notas - Examen</a>
+                    <a href="#" id="botones-lista"><i class='fas fa-clipboard'></i>Ver Notas - Cursado</a>
+                    <a href="#" id="botones-lista"><i class='fas fa-clipboard'></i>Revision de Notas</a>
+                </div>
+
+            </aside>
+
+            <!--caja contenedora - opciones(filtrar)-->
+
+            <article class=" color2 col-md-8">
+                <h3>Filtrar por:</h3>
+                <form action="">
+                    <div id="contenedor">
+                        <div class="columna">
+                            <input type="checkbox" name="Apellido" id="Apellido">
+                            <label for="Apellido">Apellido</label>
+
+                            <input type="checkbox" name="Aprobado" id="Aprobado">
+                            <label for="Aprobado">Aprobado</label>
+
+                            <input type="checkbox" name="Regular" id="Regular">
+                            <label for="Regular">Regular</label>
+
+                            <input type="checkbox" name="Presente" id="Presente">
+                            <label for="Presente">Presente</label>
+
+                            <input type="checkbox" name="Libre" id="Libre">
+                            <label for="Libre">Libre</label>
+                        </div>
+
+                        <div class="columna">
+
+                            <input type="checkbox" name="Nombre" id="Nombre">
+                            <label for="Nombre">Nombre</label>
+
+                            <input type="checkbox" name="Desaprobado" id="Desaprobado">
+                            <label for="Desaprobado">Desaprobado</label>
+
+                            <input type="checkbox" name="Promocion" id="Promocion">
+                            <label for="Promocion">Promocion</label>
+
+                            <input type="checkbox" name="Asente" id="Ausente">
+                            <label for="Ausente">Ausente</label>
+                        </div>
+                    </div>
+                    <div class="Botones-checkbox">
+                        <input class="L-B" type="reset" style="width: 200px;" value="Limpiar Busqueda">
+                        <input class="B-C" type="submit" style="width: 200px;" value="Busqueda Completa">
+                        <input class="B" type="submit" style="width: 200px;" value="Buscar">
+
+                    </div>
+                </form>
+                <h4>Resultados:</h4>
+            </article>
+        </section>
+
+        <!--Pie de Pagina-->
+
+        <div class="text-center">
+            <footer class="row align-items-center">
+                <div class="footer color4 col-md-12">
+
+                    <a href="https://www.argentina.gob.ar/educacion" target="_blank" rel="noopener noreferrer"><img
+                            src="img/logo_ministerio.png"></a>
+
+                    <a href="https://www.argentina.gob.ar/educacion/infod" target="_blank"
+                        rel="noopener noreferrer"><img src="img/logo_infod.png"></a>
+                    </a>
+                </div>
+        </div>
+        </footer>
+    </div>
+
+
+</body>
+
+</html>

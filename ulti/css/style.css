@@ -1,0 +1,295 @@
+*{
+  margin: 0px;
+  padding: 0px;
+}
+
+#cabecera{
+  height: 50px;
+  background-color: #C4C4C4;
+  text-align: center;
+}
+
+#principal{
+  /*background-color: orange;*/
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+#panel-lateral{
+  margin: 20px 0px 0px 0px;
+  width: 20%;
+}
+
+#panel-lateral ul{
+  list-style: none;
+}
+
+#panel-lateral ul li a{
+  text-decoration: none;
+}
+
+#panel-central{
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  margin: 20px 0px 0px 20px;
+  /*background-color: violet;*/
+}
+
+.panel-titulo{
+  margin: 0px 0px 10px 0px;
+}
+
+.tarjeta{
+  width: 100%;
+  /*background-color: red;*/
+}
+
+.tarjeta-primera-seccion{
+  /*background-color: orangered;*/
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.tarjeta-foto{
+  width: 180px;
+  height: 180px;
+  min-width: 180px;
+  min-height: 180px;
+  overflow: hidden;
+}
+
+.tarjeta-foto img{
+  width: 180px;
+  height: 180px;
+}
+
+.tarjeta-datos{
+  /*background-color: yellow;*/
+  margin: 10px 10px 0px 10px;
+}
+
+.tarjeta-datos-2{
+  width: 75%;
+  margin: 10px 10px 0px 10px;
+}
+
+.datos-entrada{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  /*background-color: blue;*/
+  overflow: hidden;
+  padding: 2px 0px 2px 0px;
+}
+.campo{
+  box-sizing: border-box;
+  /*background-color: orange;*/
+  width: 23%;
+}
+
+.campo-titulo{
+  margin: 5px 0px 5px 0px;
+}
+
+.campo-entrada{
+  margin: 5px 0px 5px 0px;
+  width: 100%;
+  /*background-color: yellow;*/
+}
+
+.campo-entrada input{
+  height: 30px;
+  width: 92%;
+  padding: 3px;
+  /*background-color: yellowgreen;*/
+  border: 2px solid black;
+  border-radius: 15px;
+}
+
+.botones{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 10px;
+}
+
+.botones button{
+  width: 30%;
+  padding: 12px 0px 12px 0px;
+  margin: 0px 0px 4px 0px;
+  background-color: white;
+  border-radius: 8px
+}
+
+#btn-modif-perfil{
+  border: solid blue 2px;
+}
+
+#btn-modif-clave{
+  border: solid red 2px;
+}
+
+#btn-crear-perfil{
+  border: solid green 2px;
+  background-color: greenyellow;
+}
+/*************************************/
+/************* MOBILE ****************/
+/*************************************/
+
+@media only screen and (max-width: 700px) {
+  
+  .navegador{
+    display: none;
+  }
+  
+  #panel-lateral{
+    display: none;
+  }
+  
+  #panel-central{
+    margin: 0px;
+  }
+  
+  .tarjeta{
+    width: 100%;
+  }
+
+  .tarjeta-datos{
+    width: 100%;
+  }
+
+  .tarjeta-datos-2{
+    width: 100%;
+  }
+
+  .tarjeta form{
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .tarjeta-foto{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+  }
+  
+  
+  .tarjeta-primera-seccion{
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .datos-entrada{
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .campo{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .campo-entrada{
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .campo-entrada input{
+    width: 95%;
+  }
+  
+  .botones{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .botones button{
+   width: 100%;
+  }
+}
+
+/*************************************/
+/************* MOBILE ****************/
+/*************************************/
+
+@media only screen and (max-width: 370px) {
+  
+  .navegador{
+    display: none;
+  }
+  
+  #panel-lateral{
+    display: none;
+  }
+  
+  #panel-central{
+    margin: 0px;
+  }
+  
+  .tarjeta{
+    width: 100%;
+  }
+
+  .tarjeta-datos{
+    width: 100%;
+  }
+
+  .tarjeta-datos-2{
+    width: 100%;
+  }
+  
+  .tarjeta form{
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .tarjeta-foto{
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+  }
+  
+  
+  .tarjeta-primera-seccion{
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .datos-entrada{
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .campo{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .campo-entrada{
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .campo-entrada input{
+    width: 90%;
+  }
+  
+  .botones{
+    display: flex;
+    flex-direction: column;
+  }
+
+  .botones button{
+   width: 100%;
+  }
+}

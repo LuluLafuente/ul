@@ -1,0 +1,143 @@
+<!--Vista notas cursadoAdministracion-->
+<!DOCTYPE html>
+
+<html lang="es">
+<head>
+    <meta http-equiv="CONTENT-TYPE" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
+    <link rel="shortcut icon" href="https://iset-tuc.infd.edu.ar/aula/static/14.05.00-45/skins/redinfod/img/comunes/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="./css/styleAdministrador.css" />
+    <script
+        src="https://kit.fontawesome.com/c0959f9251.js" 
+        crossorigin="anonymous">
+    </script>
+    <title>Registrar Notas de Cursado | ISET Educativo</title>
+</head>
+
+<body>
+    <div class="container">
+        <!--Panel lateral con opciones-->
+        <div class="navigation">
+            <ul>
+                <li>
+                    <a href="#">
+                        <span class="icon"><i class="fa-solid fa-user-tie"></i></span>
+                        <span class="title"><?php echo $_SESSION["u_nombre"] . ", " . $_SESSION["u_apellido"] ;?></span>
+                    </a>
+                </li>
+                <li>
+                    <a href="inscripcion_docente.php">
+                        <span class="icon"><i class="fa-solid fa-person-chalkboard"></i></span>
+                        <span class="title">Inscripción Docente</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="inscripcion_alumno.php">
+                        <span class="icon"><i class="fa-solid fa-file-circle-plus"></i></span>
+                        <span class="title">Inscripción Alumno</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span class="icon"><i class="fa-solid fa-chalkboard-user"></i></span>
+                        <span class="title">Inscripción Coordinador</span>
+                    </a>
+                </li>
+                 <li>
+                    <a href="ver_notas_examen.php">
+                        <span class="icon"><i class="fa-regular fa-note-sticky"></i></span>
+                        <span class="title">Ver Notas Examenes</span>
+                    </a>
+                </li>
+                <li class="hovered">
+                    <a href="ver_notas_cursado.php">
+                        <span class="icon"><i class="fa-solid fa-receipt"></i></span>
+                        <span class="title"> Ver Notas Cursado</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="loginAdmin.html">
+                        <span class="icon"><i class="fa-solid fa-arrow-right-from-bracket"></i></span>
+                        <span class="title">Cerrar</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <!--Menu-->
+        <div class="main">
+            <div class="topbar">
+                <div class="toggle"><i class="fa-solid fa-bars"></i></div>
+            </div>
+            <div class="cardBox">
+                <div class="card">
+                    <div>
+                        <div class="cardName">
+                        <div class="iconBx"> <i class="fa-regular fa-calendar-check"></i></div>
+                            <form action="#">
+                                <h5>Fecha:</h5>
+                                <input type="date">
+                            </form>  
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div>
+                        <div class="cardName">
+                            <div class="iconBx"><i class="fa-solid fa-file-circle-question"></i></div>
+                                <label for="Nombres-Materias">Carrera:</label>
+                                <select name="Nombres-Materias" id="Nombres-Materias">
+                                    <option value="#"></option>
+                                    <option value="TSDS">Tecnicatura Superior en Desarrollo de Software</option>
+                                    <option value="TSGA">Tecnicatura Superior en Gestion Ambiental</option>
+                                    <option value="TSAR">Tecnicatura Superior en Automatizacion y Robotica Indistrial</option>
+                                    <option value="TSB">Tecnicatura Superior en Bioenergia</option>
+                                </select>
+                            </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div>
+                        <div class="cardName">
+                            <div class="iconBx"><i class="fa-solid fa-file-circle-question"></i></div>
+                                <label for="Nombres-Materias">Materia:</label>
+                                <input type="text" name="Materias">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="details">
+                    <div class="Alumnos">
+                        <div class="cardHeader">
+                            <h2>Registro de Parcial</h2>
+                        </div>
+                        <table>
+                            <thead>
+                                <tr id="tabla-personalizada">
+                                    <th>Alumno</th>
+                                    <th>1º Parcial</th>
+                                    <th>2º Parcial</th>
+                                    <th>1º Recuperacion</th>
+                                    <th>2º Recuperacion</th>
+                                    <th>Estado</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Lista de alumnos</td>
+                                    <td>nota 1</td>
+                                    <td>nota 2</td>
+                                    <td>recuperacion 1</td>
+                                    <td>recuperacion 2</td>
+                                    <td>estado</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="./js/appAlumno.js"></script> 
+</body>
+</html>
