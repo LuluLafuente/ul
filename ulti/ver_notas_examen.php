@@ -21,6 +21,7 @@ $listaMaterias = [];
 $conexion = conexionDB();
 //Busqueda de datos
 $consulta = selectListaNotas($conexion);
+
 //Se guardan datos
 $resultado = $consulta->fetchAll();
 

@@ -20,10 +20,10 @@ $listaMaterias = [];
 $conexion = conexionDB();
 
 //BUSCAR LA LISTA DE MATERIAS
-$consulta = selectAprobadas($conexion);
-$consulta2 = selectMaterias($conexion);
-
+$planEstudio = selectPlanEstudio($conexion, $_SESSION["u_carrera"]);
+$consulta = selectHistoriaAlumno($conexion);
 //GUARDO TODOS LOS RESULTADOS EN UNA VARIABLE
 $resultado = $consulta->fetchAll();
-$resultado2 = $consulta2->fetchAll();
+$resultadoPlan = $planEstudio->fetchAll();
+//$resultado2 = $consulta2->fetchAll();
 include('historia.html');

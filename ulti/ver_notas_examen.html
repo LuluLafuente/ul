@@ -6,7 +6,9 @@
     <meta http-equiv="CONTENT-TYPE" content="text/html; charset=UTF-8">
     <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
     <link rel="shortcut icon" href="https://iset-tuc.infd.edu.ar/aula/static/14.05.00-45/skins/redinfod/img/comunes/favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="./css/styleAdministrador.css" />
+   <!-- <link rel="stylesheet" href="./css/styleAdministrador.css" />-->
+    <link rel="stylesheet" href="./css/stylePortal.css" />
+
     <script
         src="https://kit.fontawesome.com/c0959f9251.js" 
         crossorigin="anonymous">
@@ -74,52 +76,53 @@
                         <br>
                         <p>El Instituto Superior de Educación Tecnológica(ISET)- sito en Domingo Garcia 47-</p>
                         <br>
-        <table class="styled-table">
+        <table>
             <thead>
                 <tr>
-                    <th>DNI</th>
+                    <th>Legajo</th>
                     <th>Alumno</th>
                     <th>Asignatura</th>
-                    <th>1er Parcial</th>
-                    <th>2do Parcial</th>
+                    <th>Nota Final</th>
+                    <th>N° Acta</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <th>
-                        <!--DNI Alumno-->
-                        <hr>
-                  
-                        <hr>
-                       
-                    </th>
-                    <th>
-                        <!--Alumnos-->
-                        <hr>
-                        
-                        <hr>
-                    </th>
-                    <th>
-                        <!--Asignaturas-->
-                        <hr>
+                    <td>
+                        <!--Lagajo Alumno-->
                         <?php for ($i=0; $i < $consulta->rowCount(); $i++): ?>
-                            <?php echo $resultado[$i]['nombre']; ?>
+                                <?php echo $resultado[$i]['LEGAJO_ALU']; ?>
+                        <hr>
+                        <?php endfor; ?>                     
+                    </td>
+                    <td>
+                        <!--Alumnos-->
+                        <?php for ($i=0; $i < $consulta->rowCount(); $i++): ?>
+                             <?php echo $resultado[$i]['Name'];?>
+                        <hr>
+                        <?php endfor; ?>                     
+                    </td>
+                    <td>
+                        <!--Asignaturas-->
+                        <?php for ($i=0; $i < $consulta->rowCount(); $i++): ?>
+                            <?php echo $resultado[$i]['MATERIA']; ?>
                         <hr>
                         <?php endfor; ?>
-                    </th>
-                    <th>
-                        <!--Notas 1er parcial-->
+                    </td>
+                    <td>
+                        <!--Notas-->
+                        <?php for ($i=0; $i < $consulta->rowCount(); $i++): ?>
+                                <?php echo $resultado[$i]['FINAL']; ?>
                         <hr>
-                        
+                        <?php endfor; ?>                     
+                    </td>
+                    <td>
+                        <!--N°Acta-->
+                        <?php for ($i=0; $i < $consulta->rowCount(); $i++): ?>
+                                <?php echo $resultado[$i]['ID_ACTA']; ?>
                         <hr>
-                    </th>
-                    <th>
-                        <!--Notas 2do Parcial-->
-                        <hr>
-                       
-                        <hr>
-                       
-                    </th>
+                        <?php endfor; ?>                     
+                    </td>
                 </tr>
             </tbody>
         </table>

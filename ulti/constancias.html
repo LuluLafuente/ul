@@ -12,7 +12,7 @@
         <link rel="icon" href="https://iset-tuc.infd.edu.ar/sitio/wp-content/plugins/edupress-escuela/public/skins/redinfod/img/favicon_192x192.png" sizes="192x192">
         <link rel="stylesheet" href="./css/portalAlumnos.css"/>
         <link rel="stylesheet" href="./css/styleAlumno.css" />
-        <title>Portal Alumno</title>
+        <title>Portal Alumno Constancia</title>
     </head>
     <body>
         <!--Panel lateral con opciones-->
@@ -79,7 +79,7 @@
                     <!-- esto se abre al hacer click en libreta o estado academico Tablas e info-->
                     <section class="historia" id="historia">                   
                         <div class="acordeon">
-                            <h2>Constancias --> descarga aqui tus constancias </h2>
+                            <h2>Constancias</h2>
                             <div id="cont-constancia">
                                 <div id="cont-constancia-seleccionables">
                                     <div id="cont-constancia-tipo">
@@ -123,7 +123,7 @@
                                     <p>
                                         El Instituto Superior de Educación Tecnológica certifica que el alumno <span id="alumno"><?php echo $_SESSION["u_nombre"] . " " . $_SESSION["u_apellido"] ;?></span>
                                         con legajo <span id="legajo"><?php echo $_SESSION["u_legajo"] ;?></span> y dni <span id="dni"><?php echo $_SESSION["u_dni"] ;?></span> , actualmente se encuentra en condición de regular 
-                                        en la carrera <span id="carrera"><?php echo $_SESSION["u_carrera"] ;?></span> con resolución <span id="resolucion"></span> habiendo ingresado en el año <span id="fdi-ingreso"></span>. <br><br>
+                                        en la carrera <span id="carrera"><?php echo $resultadoPlan[0]["carrera"]; ?></span> con resolución <span id="resolucion"></span> habiendo ingresado en el año <span id="fdi-ingreso"></span>. <br><br>
                                         Se emite el presente certificado para ser presentado ante <span id="interesado"></span>, 
                                         se extiende el mismo en la ciudad de San Miguel de Tucumán, a los <span id="fdh-dia"></span> 
                                         días del mes de <span id="fdh-mes"></span> de <span id="fdh-anio"></span>.

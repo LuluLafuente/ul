@@ -162,8 +162,13 @@
     }
 
     function selectListaNotas($con){
-        $consulta = $con->query("SELECT * FROM vw_vista_cursado");
+        $consulta = $con->query("SELECT * FROM vw_finaladmin;");
 
-    return $consulta;
+        return $consulta;
+    }
+    function selectHistoriaAlumno($con){
+        $consulta = $con->query("SELECT materia,final,id_acta FROM examenfinal");
+
+        return $consulta;
     }
 ?>

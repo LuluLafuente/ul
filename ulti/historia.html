@@ -15,7 +15,7 @@
         href="https://iset-tuc.infd.edu.ar/sitio/wp-content/plugins/edupress-escuela/public/skins/redinfod/img/favicon_192x192.png"
         sizes="192x192">
 
-    <title>Portal Alumno</title>
+    <title>Portal Alumno Historia Academica</title>
 </head>
 
 <body>
@@ -71,12 +71,12 @@
                 </li>
             </ul>
         </div>
-        <!--Menu-->
+        <!--Main-->
         <div class="main">
             <div class="topbar">
                 <div class="toggle"><i class="fa-solid fa-bars"></i></div>
             </div>
-            <div class="contenido">
+                <div class = "container-Historia">
                 <!-- esto se abre al hacer click en historia o estado academico Tablas e  info-->
                 <section class="historia" id="historia">
                     <div class="acordeon">
@@ -85,47 +85,45 @@
                         <p>El Instituto Superior de Educación Tecnológica(ISET)- sito en Domingo Garcia 47-, hace
                             constar que
                             <?php echo $_SESSION["u_apellido"] . ", ". $_SESSION["u_nombre"];?>
-                            que pertenece a la segunda cohorte de la Carrera de *Insertar Carrera*, Resol. Minist.
+                            que pertenece a la segunda cohorte de la Carrera de <?php echo $resultadoPlan[0]["carrera"]; ?>, Resol. Minist.
                             N°513/5(Med)-2014, tiene las siguientes materias aprobadas:
                         </p>
                         <br>
 
-                        <table class="styled-table">
+                        <table>
                             <thead>
                                 <tr>
-                                    <th>Asignaturas</th>
+                                    <th>Asignatura</th>
                                     <th>Nota</th>
-                                    <th>Acta N°</th>
-                                    <th>Fecha</th>
+                                    <th>N° Acta </th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
-                                    <th>
+                                    <td>
                                         <!--Asignaturas-->
                                         <hr>
                                         <?php for ($i=0; $i < $consulta->rowCount(); $i++): ?>
-                                        <?php if ($resultado[$i]["nota"] != 0): ?>
-                                            <?php echo $resultado[$i]['nombre']; ?>
+                                            <?php echo $resultado[$i]['materia']; ?>
                                         <hr>
-                                        <?php endif; ?>
                                         <?php endfor; ?>
-                                    </th>
-                                    <th>
+                                    </td>
+                                    <td>
                                         <!--Notas-->
                                         <hr>
                                         <?php for ($i=0; $i < $consulta->rowCount(); $i++): ?>
-                                        <?php if ($resultado[$i]["nota"] != 0): ?>
-                                            <?php echo $resultado[$i]['nota']; ?>
+                                            <?php echo $resultado[$i]['final']; ?>
                                         <hr>
-                                        <?php endif; ?>
                                         <?php endfor; ?>
-                                    </th>
-                                    <th>
+                                    </td>
+                                    <td>
                                         <!--Num de Acta-->
-
-                                    </th>
-
+                                        <hr>
+                                        <?php for ($i=0; $i < $consulta->rowCount(); $i++): ?>
+                                            <?php echo $resultado[$i]['id_acta']; ?>
+                                        <hr>
+                                        <?php endfor; ?>
+                                    </td>
                                 </tr>
                             </tbody>
                         </table>
